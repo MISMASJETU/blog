@@ -32,7 +32,7 @@ function submitPost() {
     // Add the username of the logged-in user to the formData
     formData.append("author", getUsername());  // Using the getUsername function from auth.js
 
-    fetch('http://127.0.0.1:5000/api/', {
+    fetch('http://127.0.0.1:10000/api/', {
         method: 'POST',
         body: formData
     })
@@ -48,7 +48,7 @@ function submitPost() {
 }
 
 function fetchPosts() {
-    fetch('http://127.0.0.1:5000/api/blog')
+    fetch('http://127.0.0.1:10000/api/blog')
         .then(response => response.json())
         .then(posts => {
             updatePosts(posts);
@@ -83,7 +83,7 @@ function searchPost() {
         return;
     }
 
-    fetch(`http://127.0.0.1:5000/api/blog/${postId}`)
+    fetch(`http://127.0.0.1:10000/api/blog/${postId}`)
         .then(response => {
             if (response.ok) {
                 return response.json();
@@ -121,7 +121,7 @@ function deletePost() {
         return;
     }
 
-    fetch(`http://127.0.0.1:5000/api/blog/${postId}`, {
+    fetch(`http://127.0.0.1:10000/api/blog/${postId}`, {
         method: 'DELETE'
     })
     .then(response => {
@@ -155,7 +155,7 @@ function editPost() {
     }
 
     // Fetch to edit post
-    fetch(`http://127.0.0.1:5000/api/blog/${id}`, {
+    fetch(`http://127.0.0.1:10000/api/blog/${id}`, {
         method: 'PATCH',
         body: formData
     })
