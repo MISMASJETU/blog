@@ -6,8 +6,8 @@ import os
 from datetime import datetime
 from flask import abort
 
-app = Flask(__name__, static_url_path='/static', static_folder='static', template_folder='templates')
-CORS(app, resources={r"/api/*": {"origins": "http://localhost:8080"}})
+app = Flask(__name__)
+CORS(app, resources={r"/api/*": {"origins": "http://localhost:5000"}})
 bcrypt = Bcrypt(app)
 
 # File paths
