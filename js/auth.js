@@ -10,7 +10,7 @@ function login() {
     var form = document.getElementById("login");
     var formData = new FormData(form);
 
-    fetch('http://127.0.0.1:5000/api/login', {
+    fetch('http://127.0.0.1:8080/api/login', {
         method: 'POST',
         body: formData
     })
