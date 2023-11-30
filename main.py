@@ -7,6 +7,7 @@ from datetime import datetime
 from flask import abort
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'the random string'
 #CORS(app, resources={r"/api/*": {"origins": "http://localhost:10000"}})
 bcrypt = Bcrypt(app)
 
