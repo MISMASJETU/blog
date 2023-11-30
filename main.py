@@ -136,6 +136,7 @@ def add_links_to_posts(posts):
 # Route to serve the HTML file
 @app.route('/')
 def index():
+    print("Visitor on index.html")
     if 'username' in session:
         return render_template('index.html', username=session['username'])
     return render_template('login.html')
